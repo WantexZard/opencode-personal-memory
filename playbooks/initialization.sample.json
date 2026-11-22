@@ -1,0 +1,88 @@
+{
+  "synthetic": true,
+  "not_runtime_input": true,
+  "NON_EXECUTABLE": "illustration only; not a prepare payload, not an approval, not a rule change",
+  "purpose": "Shows the sample structure of the initialization workflow: positive/negative/ambiguous examples, value dimensions, expected regex hits, and semantic Review notes",
+  "route_example": {
+    "route": "manual_seed",
+    "user_agreement_required": true,
+    "real_world_coverage": "UNVALIDATED"
+  },
+  "value_dimensions": [
+    "principle_architecture_attitude",
+    "organization_role_division",
+    "project_goal_constraint_tradeoff",
+    "interaction_learning_preference",
+    "background_device"
+  ],
+  "record_kind_examples": [
+    {
+      "kind": "reusable_preference",
+      "synthetic_text": "SYNTHETIC-example: I like keeping related files in the same directory."
+    },
+    {
+      "kind": "time_bounded_project_decision",
+      "synthetic_text": "SYNTHETIC-example: For this toy project, use the plainest possible approach for now."
+    },
+    {
+      "kind": "one_off_command_NOT_standing_permission",
+      "synthetic_text": "SYNTHETIC-example: No need to reply to this message for now.",
+      "semantic_review_note": "One-off instruction; must not be treated as standing permission or a long-term preference unless the user explicitly approves it separately"
+    },
+    {
+      "kind": "quoted_thirdparty_may_match_regex_but_not_user_value",
+      "synthetic_text": "SYNTHETIC-example: An article said 'faster is better'; I do not necessarily agree.",
+      "semantic_review_note": "A quoted external view may hit a regex but must not automatically become the user's own value; exclude the whole record in Review or mark it as a quotation"
+    }
+  ],
+  "snippets": [
+    {
+      "polarity": "positive",
+      "synthetic_text": "SYNTHETIC-example: I prefer naming that reads on a single line."
+    },
+    {
+      "polarity": "negative",
+      "synthetic_text": "SYNTHETIC-example: Okay.",
+      "expected_behavior": "Low-information reply; skip during semantic Review rather than treating it as a lasting preference"
+    },
+    {
+      "polarity": "ambiguous",
+      "synthetic_text": "SYNTHETIC-example: Do not do that.",
+      "semantic_review_note": "Missing context and scope; unclear whether it is a user constraint; does not automatically become a lifelong fact"
+    }
+  ],
+  "illustrative_patterns": [
+    {
+      "id": "ILLUS-1",
+      "value_dimension": "interaction_learning_preference",
+      "pattern": "I prefer",
+      "expected_regex_match": "SYNTHETIC-example: I prefer naming that reads on a single line.",
+      "note": "Only illustrates the keyword-first-then-bounded-regex shape; not real corpus from any session"
+    },
+    {
+      "id": "ILLUS-2",
+      "value_dimension": "principle_architecture_attitude",
+      "pattern": "faster is better",
+      "expected_regex_match": "SYNTHETIC-example: An article said 'faster is better'; I do not necessarily agree.",
+      "note": "Quoted third-party views must be excluded in semantic Review and must not automatically become user values"
+    },
+    {
+      "id": "ILLUS-3",
+      "value_dimension": "organization_role_division",
+      "pattern": "plainest possible approach",
+      "expected_regex_match": "SYNTHETIC-example: For this toy project, use the plainest possible approach for now.",
+      "note": "Time-bounded project decision; candidates should carry a project/time-scope semantic note"
+    }
+  ],
+  "review_disposition_example": {
+    "Add": "Example: no applied rules; the draft stays as DRAFT",
+    "Update": "Example: none",
+    "Remove": "Example: none",
+    "Conflict": "Example: preferences from different periods may be opposite",
+    "Skip": "Example: low information, ambiguity, one-off instruction, third-party quotation"
+  },
+  "storage_example": {
+    "learning_batch": "optional separate gate; initializer never writes queue/unmatched/archive",
+    "rules_transaction_example_shape": "processed_ids=[]; reviewed_unmatched_ids=[]; writes only learning/rules.json — shape only, NON_EXECUTABLE placeholder, not a runnable prepare payload"
+  }
+}

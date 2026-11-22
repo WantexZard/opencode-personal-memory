@@ -1,0 +1,21 @@
+{
+  "Preference": [
+    "我(?:喜欢|偏好|习惯|倾向于)",
+    "我(?:不喜欢|不接受|讨厌)",
+    "以后(?:都|一直|默认)",
+    "尽量.{0,8}(?:简单|简洁|少一点)",
+    "不确定.{0,12}(?:先问我|问我|确认一下)",
+    "(?:prefer|favor)[\\s\\S]{0,20}(?:simple|plain|minimal)",
+    "\\bI\\s+(?:prefer|like|dislike)\\b",
+    "\\bI(?:'m| am)\\s+used to\\b",
+    "\\bfrom now on\\b"
+  ],
+  "Project": [
+    "这个项目|这个仓库|这次任务",
+    "\\b(?:this project|this repo(?:sitory)?|this task)\\b"
+  ],
+  "Remember": [
+    "记一下|记住|帮我记|请记下",
+    "\\b(?:remember this|remember that|please remember|make a note)\\b"
+  ]
+}

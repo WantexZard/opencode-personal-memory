@@ -1,0 +1,35 @@
+# --- Personal Memory：绝不发布的真实数据 ---
+# 运行时生成的个人记忆与候选，一律不进仓库
+learning/
+user-profile/
+
+# 内部工具与其测试，本仓不发布
+tools/
+tests/test_session_rule_import.py
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# --- Node / Bun ---
+node_modules/
+bun.lockb
+*.log
+
+# --- 编辑器 / 系统 ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- 临时与备份 ---
+*.bak
+*.tmp
+/tmp/
