@@ -75,7 +75,7 @@ flowchart TD
 克隆到 `personal-memory` 目录，或下载 ZIP、解压后将目录改名为 `personal-memory`：
 
 ```sh
-git clone https://github.com/WantexZard/personal-memory-public.git personal-memory
+git clone https://github.com/WantexZard/opencode-personal-memory.git personal-memory
 ```
 
 从**仓库的上一级目录**执行。下面只复制代码、指令和模板，不复制 `.git`、测试或运行中的记忆。

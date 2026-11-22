@@ -75,7 +75,7 @@ Use the OpenCode **v1** installation layout below. OpenCode loads the TypeScript
 Clone into a directory named `personal-memory`, or download the ZIP and rename the extracted directory to `personal-memory`:
 
 ```sh
-git clone https://github.com/WantexZard/personal-memory-public.git personal-memory
+git clone https://github.com/WantexZard/opencode-personal-memory.git personal-memory
 ```
 
 Run the following from the **parent directory of the checkout**. These steps copy code, instructions and starter templates, not `.git`, tests or runtime memory.
